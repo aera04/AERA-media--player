@@ -1,0 +1,20 @@
+@echo off
+REM Uninstall script for Aera Media Player
+
+SETLOCAL
+SET "VENV_DIR=aera_env"
+
+IF EXIST %VENV_DIR% (
+    echo Removing virtual environment...
+    rmdir /s /q %VENV_DIR%
+    echo Virtual environment removed.
+) ELSE (
+    echo Virtual environment not found.
+)
+
+REM Optionally remove the main script if you want:
+REM del aera_media_player.py
+
+echo Uninstallation complete.
+pause
+ENDLOCAL
