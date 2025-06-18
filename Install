@@ -1,0 +1,24 @@
+@echo off
+REM Install script for Aera Media Player
+REM Ensure you have Python 3.x installed and added to PATH
+
+SETLOCAL
+SET "VENV_DIR=aera_env"
+
+echo Creating virtual environment...
+python -m venv %VENV_DIR%
+
+echo Activating virtual environment and installing requirements...
+call %VENV_DIR%\Scripts\activate
+
+pip install --upgrade pip
+pip install python-vlc pillow
+
+echo Installation complete.
+echo To run the Aera Media Player, activate the environment and run the Python script:
+echo.
+echo     call %VENV_DIR%\Scripts\activate
+echo     python aera_media_player.py
+echo.
+pause
+ENDLOCAL
